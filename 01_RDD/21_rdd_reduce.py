@@ -11,3 +11,7 @@ if __name__ == '__main__':
     r2 = sc.parallelize([('a', 1), ('a', 2), ('B', 100), ('b', 2), ('c', 3)])
     print(r2.reduce(lambda x, y: x + y))
 
+    # 会报错，因为x[1] + y[1]的结果是整数，该整数再作为参数传入时x[1]会报错
+    # r2 = sc.parallelize([('a', 1), ('a', 2), ('B', 100), ('b', 2), ('c', 3)])
+    # print(r2.reduce(lambda x, y: x[1] + y[1]))
+
